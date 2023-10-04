@@ -51,7 +51,7 @@ const tl2 = gsap.timeline({
     start: "top 0%",
     end: "bottom 160%",
     scrub: true,
-    markers: true,
+    // markers: true,
   },
 });
 tl2.to(".page2-text", {

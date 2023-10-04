@@ -86,7 +86,7 @@ function menuPage() {
     i++;
     if (i % 2 == 0) {
       menuPage.style.transform = "translateY(0%)";
-      menuPage.style.borderRadius = "0%";
+      menuPage.style.borderRadius = "4%";
     } else {
       menuPage.style.transform = "translateY(-150%)";
       menuPage.style.borderRadius = "50%";

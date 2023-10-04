@@ -124,11 +124,14 @@ nav span {
   width: 20px;
 }
 /* MOBILE NAVBAR START */
+.mobileNav {
+  display: none;
+}
 .menuPage {
   position: absolute;
   top: 18%;
   z-index: 1000;
-  background-color: #eee;
+  background-color: #000;
   width: 100%;
   height: 100%;
   transform: translateY(-150%);
@@ -144,7 +147,7 @@ nav span {
 }
 .menuPage span a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 5rem;
   position: relative;
   overflow: hidden;
@@ -153,7 +156,7 @@ nav span {
   content: "";
   width: 100%;
   height: 1px;
-  background-color: #000;
+  background-color: #fff;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -166,6 +169,7 @@ nav span {
   transform: translate(0%);
 }
 .menu {
+  display: none;
   background-color: transparent;
   border: 0px;
 }
@@ -380,3 +384,199 @@ video {
 /* PAGE5 END */
 
 /* RESPONSIVE */
+@media screen and (max-width: 1200px) {
+  .page3-heading {
+    font-size: 8rem;
+  }
+  .page5 {
+    margin-bottom: 100px;
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .page5 {
+    overflow-x: hidden;
+    margin-bottom: auto;
+  }
+  .page5 .page3-heading {
+    font-size: 8rem;
+  }
+  .page5 p {
+    font-size: 16px;
+  }
+  .contactBtn {
+    width: 600px;
+    top: 55%;
+  }
+  .contactBtn a {
+    font-size: 4rem;
+  }
+  .page3 > span p {
+    font-size: 14px;
+  }
+  .page3-heading {
+    font-size: 6rem;
+  }
+  .cursor {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .header-line {
+    font-size: 10vw;
+  }
+  nav {
+    display: none;
+  }
+  .mobileNav {
+    display: flex;
+  }
+  .menu {
+    display: block;
+  }
+  .page5 .page3-heading {
+    font-size: 6rem;
+  }
+  .page5 p {
+    font-size: 12px;
+  }
+  .contactBtn {
+    height: 140px;
+    width: 500px;
+    top: 40%;
+  }
+  .contactBtn a {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .page3 section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 200px);
+  }
+  #box-1 section img,
+  #box-1 video {
+    object-fit: cover;
+    height: 400px;
+  }
+  #box-1 {
+    height: 400px;
+    grid-row: 1 / 3;
+    grid-column: span 5;
+  }
+  #box-5 {
+    grid-column-start: span 5;
+    /* grid-row-start: 4;
+    grid-row-end: 6; */
+  }
+  #box-2 {
+    margin-top: 40px;
+    grid-column-start: span 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  #box-4 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+  }
+  #box-3 {
+    margin-top: 40px;
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+  .page3 > span {
+    flex-direction: column;
+    padding-inline: 10px;
+  }
+  .page3-heading {
+    font-size: 10rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .knowmoreBtn {
+    width: 165px;
+    height: 165px;
+  }
+  .reveal-type {
+    font-size: 1.4rem;
+  }
+  .page1-header {
+    padding-inline: 3.4%;
+  }
+  .mobileNav {
+    padding-inline: 3.4%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contactBtn {
+    top: 55%;
+  }
+  .menuPage span a {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .header-line {
+    font-size: 12vw;
+  }
+  .page5 .page3-heading {
+    font-size: 4rem;
+  }
+  .page5 p {
+    width: 100%;
+  }
+  .contactBtn a {
+    font-size: 2rem;
+  }
+  .contactBtn {
+    width: 400px;
+    left: -6%;
+    border: 0px;
+    top: 40%;
+  }
+  .page3-heading {
+    font-size: 8rem;
+  }
+}
+@media screen and (max-width: 560px) {
+  .page3 section {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat((12, 1fr));
+  }
+  .box {
+    grid-template-columns: span 1;
+    grid-template-rows: span 2;
+  }
+  .reveal-type {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .knowmoreBtn {
+    bottom: 14%;
+  }
+  .menuPage {
+    border-radius: 0% !important;
+  }
+  .page3 section {
+    grid-template-columns: 1fr 1fr;
+  }
+  #box-2 {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  #box-3 {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  .page3-heading {
+    font-size: 5rem;
+  }
+  .page5 .page3-heading {
+    font-size: 3.3rem;
+  }
+}
