@@ -6,12 +6,15 @@
   font-family: regular;
   src: url(./fonts/Apercu\ Regular.otf);
 }
+@font-face {
+  font-family: bold;
+  src: url(./fonts/Anton-Regular.ttf);
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: regular;
-  cursor: none;
 }
 body {
   overflow-x: hidden;
@@ -20,13 +23,13 @@ body {
   width: 20px;
   height: 20px;
   background-color: #5d12d2;
-  mix-blend-mode: difference;
   position: absolute;
   top: 0%;
   left: 0%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  z-index: -1;
 }
 .special {
   color: #5c12d2 !important;
@@ -37,7 +40,7 @@ body {
   border-radius: 10px;
   position: fixed;
   bottom: 2%;
-  left: 1%;
+  left: 3.4%;
   gap: 10px;
   display: flex;
   padding: 10px 12px;
@@ -120,6 +123,56 @@ nav span {
 .arrow {
   width: 20px;
 }
+/* MOBILE NAVBAR START */
+.menuPage {
+  position: absolute;
+  top: 18%;
+  z-index: 1000;
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-150%);
+  transition: 2s;
+  border-radius: 50%;
+}
+.menuPage span {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.menuPage span a {
+  text-decoration: none;
+  color: #000;
+  font-size: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.menuPage a::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+  transition: all 0.6s ease-in-out;
+  transform: translate(-100%);
+}
+.menuPage a:hover::after {
+  transform-origin: left;
+  transform: translate(0%);
+}
+.menu {
+  background-color: transparent;
+  border: 0px;
+}
+.menu img {
+  width: 40px;
+}
+/* MOBILE NAVBAR END */
 .page1-outer-area {
   position: relative;
   overflow: hidden;
@@ -141,7 +194,7 @@ nav span {
 }
 .knowmoreBtn {
   background-color: transparent;
-  border-radius: 2px solid;
+  border: 2px solid;
   border-radius: 50%;
   width: 235px;
   height: 235px;
@@ -149,6 +202,8 @@ nav span {
   right: 4%;
   bottom: 4%;
   scale: 0;
+  overflow: hidden;
+  /* z-index: 20; */
 }
 .knowmoreBtn a {
   text-decoration: none;
@@ -156,10 +211,17 @@ nav span {
   font-size: 24px;
   font-weight: 100;
 }
-.knowmoreBtn:hover {
-  background-color: #eee;
-  transform-origin: bottom;
-  transition: 0.5s;
+.bgColor {
+  z-index: -1;
+  border-radius: 50%;
+  scale: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  background-color: pink;
+  transform: translate(-50%, -50%);
 }
 /* PAGE START*/
 .page2 {
@@ -224,7 +286,7 @@ nav span {
   width: auto;
   position: relative;
   margin: 15px;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   background-color: #000;
   border: 2px solid #101010;
@@ -235,7 +297,7 @@ video {
   width: 100%;
   object-fit: cover;
   position: relative;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 #box-1 {
   display: grid;
@@ -251,6 +313,8 @@ video {
 }
 .page3-heading {
   font-size: 12rem;
+  font-family: bold;
+  font-weight: 100;
 }
 .page3 > span {
   display: flex;
@@ -261,6 +325,7 @@ video {
 .page3 > span p {
   font-size: 18px;
   color: #bdbdbd;
+  text-transform: uppercase;
 }
 /* PAGE3 END */
 
@@ -281,5 +346,37 @@ video {
 .page5 {
   width: 100%;
   height: 100vh;
+  padding: 40px;
+  position: relative;
+}
+.page5 .page3-heading {
+  font-size: 10rem;
+}
+.page5 p {
+  font-size: 24px;
+  width: 60%;
+}
+.contactBtn {
+  width: 800px;
+  height: 200px;
+  background-color: transparent;
+  border: 2px solid #eee;
+  border-radius: 30px;
+  position: absolute;
+  top: 72%;
+  right: -20%;
+  transition: 0.4s;
+  z-index: 100;
+}
+.contactBtn a {
+  text-decoration: none;
+  color: #eee;
+  font-size: 5rem;
+  cursor: pointer;
+  font-family: bold;
+  position: relative;
+  left: -14%;
 }
 /* PAGE5 END */
+
+/* RESPONSIVE */

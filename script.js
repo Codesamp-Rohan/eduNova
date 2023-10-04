@@ -11,10 +11,12 @@ function cursorHover() {
 function ankerHover() {
   const anker = document.querySelectorAll(".nav-anker").forEach((elem) => {
     elem.addEventListener("mousemove", function (e) {
-      cursor.style.scale = "4";
+      cursor.style.width = "80px";
+      cursor.style.height = "80px";
     });
     elem.addEventListener("mouseleave", function (e) {
-      cursor.style.scale = "1";
+      cursor.style.width = "20px";
+      cursor.style.height = "20px";
     });
   });
 }
@@ -46,7 +48,7 @@ function hoverBtn() {
   });
 }
 function cardHover() {
-  const card = document.querySelectorAll(".box");
+  const card = document.querySelectorAll(".page3 section");
   const cardImg = document.querySelectorAll(".box-image");
   card.forEach((e) => {
     e.addEventListener("mouseenter", function () {
@@ -61,8 +63,40 @@ function cardHover() {
     });
   });
 }
+function buttonCatch() {
+  const knowmoreBtn = document.querySelector(".knowmoreBtn");
+  const anker = document.querySelector(".knowmoreBtn a");
+  const bgColor = document.querySelector(".bgColor");
+  knowmoreBtn.addEventListener("mousemove", function (e) {
+    e.preventDefault;
+    bgColor.style.scale = "1";
+    bgColor.style.transition = "0.4s";
+  });
+  knowmoreBtn.addEventListener("mouseleave", function (e) {
+    e.preventDefault;
+    bgColor.style.scale = "0";
+    bgColor.style.transition = "0.4s";
+  });
+}
+function menuPage() {
+  const menu = document.querySelector(".menu");
+  const menuPage = document.querySelector(".menuPage");
+  let i = 1;
+  menu.addEventListener("click", function () {
+    i++;
+    if (i % 2 == 0) {
+      menuPage.style.transform = "translateY(0%)";
+      menuPage.style.borderRadius = "0%";
+    } else {
+      menuPage.style.transform = "translateY(-150%)";
+      menuPage.style.borderRadius = "50%";
+    }
+  });
+}
 cursorHover();
 ankerHover();
 ankermagnet();
 hoverBtn();
 cardHover();
+buttonCatch();
+menuPage();

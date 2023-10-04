@@ -49,15 +49,51 @@ const tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".page2",
     start: "top 0%",
-    end: "bottom 140%",
+    end: "bottom 160%",
     scrub: true,
-    // markers: true,
+    markers: true,
   },
 });
 tl2.to(".page2-text", {
   marginRight: "0px",
-  duration: 1,
+  duration: 0.6,
 });
+
+const tl5 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".page5",
+    start: "top 70%",
+    end: "top 20%",
+    // markers: true,
+    scrub: true,
+  },
+});
+tl5
+  .to(
+    "body",
+    {
+      backgroundColor: "#101010",
+      color: "#eee",
+    },
+    "toggle"
+  )
+  .to(
+    ".social-media",
+    {
+      backgroundColor: "#eee",
+    },
+    "toggle"
+  )
+  .to(
+    ".social-media a",
+    {
+      backgroundColor: "#000",
+      color: "#eee",
+    },
+    "toggle"
+  );
+
+// SPLIT-TYPE
 
 gsap.registerPlugin(ScrollTrigger);
 const splitTypes = document.querySelectorAll(".reveal-type");
