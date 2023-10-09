@@ -186,3 +186,37 @@ textarea:focus {
   grid-column: span 2;
   background-color: #6bd640;
 }
+
+@media screen and (max-width: 1050px) {
+  .moove {
+    display: none;
+  }
+  form {
+    width: 60vw;
+  }
+  input,
+  textarea {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 680px) {
+  form {
+    padding-inline: 50px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header,
+  .header .special {
+    font-size: 5rem;
+  }
+  form button {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header,
+  .header .special {
+    font-size: 4rem;
+  }
+}

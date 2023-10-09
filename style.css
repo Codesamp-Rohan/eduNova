@@ -18,18 +18,38 @@
 }
 body {
   overflow-x: hidden;
+  /* cursor: none; */
 }
 .cursor {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background-color: #5d12d2;
   position: absolute;
   top: 0%;
   left: 0%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  transition: all 0s;
+  z-index: 1;
+  transition: cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+  transition-property: 100% 100%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 0.1px solid black;
+  transition: cubic-bezier(0.19, 1, 0.22, 1) 0s;
   z-index: -1;
+  transition-property: 100% 100%;
+  pointer-events: none;
 }
 .special {
   color: #5c12d2 !important;
@@ -391,6 +411,9 @@ video {
   .page5 {
     margin-bottom: 100px;
     overflow-x: hidden;
+  }
+  .bgColor {
+    display: none;
   }
 }
 @media screen and (max-width: 1000px) {

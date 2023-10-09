@@ -78,6 +78,20 @@ tl5
     "toggle"
   )
   .to(
+    ".cursor-outline",
+    {
+      border: "0.1px solid #fff",
+    },
+    "toggle"
+  )
+  .to(
+    ".cursor",
+    {
+      backgroundColor: "pink",
+    },
+    "toggle"
+  )
+  .to(
     ".social-media",
     {
       backgroundColor: "#eee",

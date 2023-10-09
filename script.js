@@ -1,11 +1,24 @@
 const cursor = document.querySelector(".cursor");
+const cursorOutline = document.querySelector(".cursor-outline");
 const pageHeader = document.querySelector(".page1-header");
 // GLOBAL DECLARATION...UP...
 
 function cursorHover() {
   window.addEventListener("mousemove", function (e) {
-    cursor.style.left = e.pageX + "px";
-    cursor.style.top = e.pageY + "px";
+    cursor.animate(
+      {
+        left: e.pageX + "px",
+        top: e.pageY + "px",
+      },
+      { duration: 0, fill: "forwards" }
+    );
+    cursorOutline.animate(
+      {
+        left: e.pageX + "px",
+        top: e.pageY + "px",
+      },
+      { duration: 500, fill: "forwards" }
+    );
   });
 }
 function ankerHover() {
@@ -13,10 +26,12 @@ function ankerHover() {
     elem.addEventListener("mousemove", function (e) {
       cursor.style.width = "80px";
       cursor.style.height = "80px";
+      cursor.style.transition = "0.3s";
     });
     elem.addEventListener("mouseleave", function (e) {
-      cursor.style.width = "20px";
-      cursor.style.height = "20px";
+      cursor.style.width = "10px";
+      cursor.style.height = "10px";
+      cursor.style.transition = "0s";
     });
   });
 }
